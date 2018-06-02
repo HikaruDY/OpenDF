@@ -1,0 +1,14 @@
+;//OpenDF :: An open source implementation of DFramework.]
+;//	(C)2018 OpenDF Project
+;//
+;//	Read LICENSE file for licenses and copyrights information before using this file.
+;//
+
+LIBRARY OpenDF
+EXPORTS
+	ODFCreate			@1
+	ODFGetBuild			@2
+	ODFGetCompatibleVersion		@3
+	DFCreate			= ODFCreate
+	DFGetBuild			= ODFGetBuild
+	DFGetCompatibleVersion		= ODFGetCompatibleVersion

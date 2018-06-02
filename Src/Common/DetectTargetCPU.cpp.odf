@@ -1,0 +1,25 @@
+//OpenDF :: An open source implementation of DFramework.]
+//	(C)2018 OpenDF Project
+//
+//	Read LICENSE file for licenses and copyrights information before using this file.
+//
+
+#if defined(_M_IX86)
+	#define ODF_TARGET x86
+	#define ODF_TARGET_X86
+#endif
+
+#if defined(_M_AMD64)
+	#define DF_TARGET x64
+	#define DF_TARGET_X64
+#endif
+
+#if !defined(ODF_TARGET)
+	#define ODF_TARGET unknown
+	#define ODF_TARGET_UNKNOWN
+#else
+#endif
+
+echo OpenDF: Target CPU: ODF_TARGET
+set TARGET_CPU=ODF_TARGET
+

@@ -1,0 +1,41 @@
+//OpenDF :: An open source implementation of DFramework.]
+//	(C)2018 OpenDF Project
+//
+//	Read LICENSE file for licenses and copyrights information before using this file.
+//
+
+#include <OpenDF_Build.h>
+
+#define ODF_TOSTRING_RC_(x) #x  
+#define ODF_TOSTRING_RC(x) ODF_TOSTRING_RC_(x)
+
+#ifndef ODF_RC_OPENDF
+	#define ODF_RC_OPENDF OpenDF
+#endif
+
+#ifndef ODF_RC_TARGET
+	#define ODF_RC_TARGET unknown
+#endif
+
+1 VERSIONINFO
+FILEVERSION 1,0,0,0
+PRODUCTVERSION 1,0,0,0
+FILEOS 0x4
+FILETYPE 0x1
+{
+	BLOCK "StringFileInfo" {
+		BLOCK "040904E4" {
+			VALUE "CompanyName", "OpenDF Project"
+			VALUE "FileDescription", ODF_TOSTRING_RC(ODF_RC_OPENDF) ": " DF_BUILD
+			VALUE "LegalCopyright", "(C)2018 OpenDF Project All Rights Reserved."
+			VALUE "OriginalFilename", ODF_TOSTRING_RC(ODF_RC_OPENDF) ".dll"
+			VALUE "ProductName", ODF_TOSTRING_RC(ODF_RC_OPENDF) " (" ODF_TOSTRING_RC(ODF_RC_TARGET) ")"
+			VALUE "ProductVersion", DF_BUILD
+		}
+	}
+
+	BLOCK "VarFileInfo" {
+		VALUE "Translation", 0x0409 0x04B0  
+	}
+}
+

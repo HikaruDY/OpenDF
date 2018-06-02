@@ -4,10 +4,17 @@
 #//	Read LICENSE file for licenses and copyrights information before using this file.
 #//
 
+# Files generated when building
+*_Generated.*
+
 # Extra files
 *.exe
 *.dll
 *.lib
+*.res
+*.obj
+*.pdb
+*.exp
 *.db
 /Src/TEMP
 

@@ -34,6 +34,7 @@ set LDFLAGS=/DLL /Subsystem:Windows /Def:"%DIR_COMMON%\OpenDF.def"
 
 :DETECT_CPU
 REM //Detect Target CPU
+IF NOT EXIST "%DIR_TEMP%" mkdir %DIR_TEMP% >nul
 set TestCPP=%DIR_TEMP%\DetectTargetCPU.cpp
 copy /y "%DIR_COMMON%\DetectTargetCPU.cpp.odf" "%TestCPP%" >nul || GOTO ERROR
 %CC% %CFLAGSX% /P /Fi"%DIR_TEMP%\TargetCPU.cmd" "%TestCPP%" >nul || GOTO ERROR
@@ -43,3 +44,10 @@ call "%DIR_TEMP%\TargetCPU.cmd" 2>nul
 set DIR_BIN=%DIR_BIN%\%TARGET_CPU%
 set DIR_LIB=%DIR_LIB%\%TARGET_CPU%
 
+
+GOTO EOF
+:ERROR
+echo Config failed.
+exit /b 1
+:EOF
+exit /b 0

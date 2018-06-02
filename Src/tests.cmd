@@ -6,7 +6,7 @@ REM //	Read LICENSE file for licenses and copyrights information before using th
 REM //
 
 setlocal
-call "%~dp0\Config.cmd"
+call "%~dp0\Config" || GOTO ERROR
 
 set DIR_TESTS=%~dp0\..\Tests
 set CC_TestCommonInclude=/I"%DIR_TESTS%"

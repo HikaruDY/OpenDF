@@ -9,7 +9,7 @@ REM // OpenDF Makefile for Windows
 REM //	When type 'make' in Linux: Ignore this file by default, will run native 'make' command and load 'Makefile' instead.
 
 setlocal
-call "%~dp0\Config.cmd"
+call "%~dp0\Config" || GOTO ERROR
 
 :MAIN
 pushd "%~dp0"

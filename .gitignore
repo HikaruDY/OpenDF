@@ -1,0 +1,17 @@
+#//OpenDF :: An open source implementation of DFramework.]
+#//	(C)2018 OpenDF Project
+#//
+#//	Read LICENSE file for licenses and copyrights information before using this file.
+#//
+
+# Extra files
+*.exe
+*.dll
+*.lib
+*.db
+/Src/TEMP
+
+# Environment dependent files
+/Private
+/Git.cmd
+

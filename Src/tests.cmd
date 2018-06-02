@@ -15,6 +15,9 @@ set CC_TestCommonInclude=/I"%DIR_TESTS%"
 pushd "%DIR_TESTS%"
 set PATH=%DIR_BIN%;%PATH%
 
+set ODF_RC_FILE=%DIR_TEMP%\OpenDF_%TARGET_CPU%.res
+IF EXIST "%ODF_RC_FILE%" set FILE_ODFRC=%ODF_RC_FILE%
+
 IF NOT "%~1" == "" CALL :TEST %~1 && GOTO EOF || GOTO ERROR
 
 
@@ -36,7 +39,7 @@ IF NOT EXIST "%~1\_Test_.cpp" (
 pushd "%~1"
 	echo Test of %~1:
 	%CC% %CFLAGSX% %CFLAGS% %CC_TestCommonInclude% _Test_.cpp || GOTO ERROR
-	%LD% %LDFLAGSX% *.obj "%DIR_LIB%\OpenDF.lib" || GOTO ERROR
+	%LD% %LDFLAGSX% *.obj "%DIR_LIB%\OpenDF.lib" %FILE_ODFRC% || GOTO ERROR
 	_Test_
 popd
 GOTO RETURN
